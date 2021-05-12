@@ -1,0 +1,5 @@
+画像パスまとめCSV,総数,横,縦,幅,高さ
+data/scene/planet/player_locus_graphics.csv,4,4,1,8,8
+生存時間,0.5,,,,
+終了アルファ値,0,,,,
+スケール,2,,,,

@@ -1,0 +1,43 @@
+#include "ヘッダー.h"
+
+#include "../object/debug_command.h"
+
+
+namespace spe {
+
+	void シーン::initialize() {
+
+		dxe::DxEngine& engine = dxe::DxEngine::getInstance();
+
+		//----------------------------------------------------------------------------------------------------
+		// スクリーン作成
+
+		const int WINDOW_WIDTH = engine.getWindowWidth();
+		const int WINDOW_HEIGHT = engine.getWindowHeight();
+
+		dxe::Camera2D::SharedPtr main_camera = dxe::Camera2D::create<dxe::Camera2D>();
+		createScreenToScene("main_screen", main_camera, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+		//----------------------------------------------------------------------------------------------------
+		// オブジェクト生成
+
+
+
+		//----------------------------------------------------------------------------------------------------
+		// デバッグコマンド有効化
+
+		DebugCommand::create<DebugCommand>();
+		t2k::Debug::log("シーン");
+
+		//----------------------------------------------------------------------------------------------------
+	}
+
+	void シーン::lateUpdate() {
+
+	}
+
+	void シーン::finalize() {
+
+	}
+
+}

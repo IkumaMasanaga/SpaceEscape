@@ -1,0 +1,11 @@
+移動画像パス,総コマ数,横コマ数,縦コマ数,1枚の幅,1枚の高さ
+graphics/planet/enemy/bird/a_move.png,4,4,1,80,80
+graphics/planet/enemy/bird/b_move.png,4,4,1,80,80
+graphics/planet/enemy/bird/c_move.png,4,4,1,80,80
+graphics/planet/enemy/bird/d_move.png,4,4,1,80,80
+,幅,高さ,相対座標x,相対座標y,
+当たり判定用矩形,48,32,0,0,
+hp,1,,,,
+直径,200,,,,
+時間,1,,,,
+エフェクト,data/scene/planet/enemy/erase_effect.csv,,,,

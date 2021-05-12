@@ -1,0 +1,9 @@
+移動画像パス,総コマ数,横コマ数,縦コマ数,1枚の幅,1枚の高さ
+graphics/planet/enemy/skull/a_move.png,4,4,1,64,64
+graphics/planet/enemy/skull/b_move.png,4,4,1,64,64
+graphics/planet/enemy/skull/c_move.png,4,4,1,64,64
+graphics/planet/enemy/skull/d_move.png,4,4,1,64,64
+,幅,高さ,相対座標x,相対座標y,
+当たり判定用矩形,30,30,0,0,
+speed,2,,,,
+エフェクト,data/scene/planet/enemy/barrier_effect.csv,,,,

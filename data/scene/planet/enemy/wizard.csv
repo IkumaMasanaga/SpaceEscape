@@ -1,0 +1,16 @@
+待機画像パス,総コマ数,横コマ数,縦コマ数,1枚の幅,1枚の高さ
+graphics/planet/enemy/wizard/a_idle.png,4,4,1,131,132
+graphics/planet/enemy/wizard/b_idle.png,4,4,1,131,132
+graphics/planet/enemy/wizard/c_idle.png,4,4,1,131,132
+graphics/planet/enemy/wizard/d_idle.png,4,4,1,131,132
+移動画像パス,総コマ数,横コマ数,縦コマ数,1枚の幅,1枚の高さ
+graphics/planet/enemy/wizard/a_attack.png,4,4,1,131,132
+graphics/planet/enemy/wizard/b_attack.png,4,4,1,131,132
+graphics/planet/enemy/wizard/c_attack.png,4,4,1,131,132
+graphics/planet/enemy/wizard/d_attack.png,4,4,1,131,132
+,幅,高さ,相対座標x,相対座標y,
+当たり判定用矩形,32,56,0,16,
+hp,1,,,,
+shot_time,2.1,,,,
+shot_speed,5,,,,
+エフェクト,data/scene/planet/enemy/erase_effect.csv,,,,

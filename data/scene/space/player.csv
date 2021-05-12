@@ -1,0 +1,5 @@
+画像,data/scene/space/player_graphics.csv,,,
+感度（1秒あたりに増減させる値）,1,,,
+speed,5,,,
+consume_rate,0.05,,,
+当たり判定,52,32,0,0

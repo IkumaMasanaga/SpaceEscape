@@ -1,0 +1,10 @@
+壁上,-1,graphics/planet/map_chip/grass/wall_top.png,1,1,1,32,0
+壁,-2,graphics/planet/map_chip/grass/wall.png,1,1,1,32,0
+足場左,-3,graphics/planet/map_chip/grass/step_left.png,1,1,1,32,0
+足場右,-4,graphics/planet/map_chip/grass/step_right.png,1,1,1,32,0
+壁下,1,graphics/planet/map_chip/grass/wall_bottom.png,1,1,1,32,0
+草,2,graphics/planet/map_chip/grass/object.png,1,1,1,32,0
+右キー,3,graphics/ui/key_right.png,2,2,1,32,0.6
+Cキー,4,graphics/ui/key_c.png,2,2,1,32,0.6
+Xキー,5,graphics/ui/key_x.png,2,2,1,32,0.6
+Zキー,6,graphics/ui/key_z.png,4,4,1,32,1.2

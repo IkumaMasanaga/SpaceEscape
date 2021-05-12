@@ -1,0 +1,11 @@
+idle,graphics/planet/unitychan/unitychan_idle.png,4,4,1,72,72,0.6
+run,graphics/planet/unitychan/unitychan_run.png,8,8,1,72,72,0.4
+jump_up,graphics/planet/unitychan/unitychan_jump_up.png,2,2,1,72,72,0.1
+jump_middle_1,graphics/planet/unitychan/unitychan_jump_mid_air_1.png,1,1,1,72,72,0
+jump_middle_2,graphics/planet/unitychan/unitychan_jump_mid_air_2.png,1,1,1,72,72,0
+jump_middle_3,graphics/planet/unitychan/unitychan_jump_mid_air_3.png,1,1,1,72,72,0
+jump_fall,graphics/planet/unitychan/unitychan_jump_fall.png,2,2,1,72,72,0.1
+damage,graphics/planet/unitychan/unitychan_damage.png,7,7,1,72,72,0.7
+death,graphics/planet/unitychan/unitychan_death.png,10,10,1,72,72,1.2
+attack,graphics/planet/unitychan/unitychan_attack.png,5,5,1,80,72,0.3
+tackle,graphics/planet/unitychan/unitychan_tackle.png,1,1,1,72,72,0
