@@ -3,6 +3,7 @@
 #include "physics.h"
 #include "bgm_manager.h"
 #include "se_manager.h"
+#include "joypad_manager.h"
 #include "scene.h"
 #include "object/object.h"
 
@@ -17,6 +18,7 @@ namespace dxe {
 	}
 
 	void DxEngine::update() {
+		JoypadManager::getInstance().update();
 		now_scene_->update();
 		transition_sequence_.update();
 		now_scene_->render();

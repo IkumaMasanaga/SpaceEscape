@@ -58,6 +58,13 @@ namespace spe {
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+		}
+
 		if (enter) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::ENTER);
 		}

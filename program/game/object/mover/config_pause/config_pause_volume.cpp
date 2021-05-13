@@ -79,6 +79,15 @@ namespace spe {
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+			up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+			down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+		}
+
 		bool is_key_pressed = false;
 
 		if (up && 0 < select_) {
@@ -128,6 +137,15 @@ namespace spe {
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
+			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+		}
+
 		if (left) {
 			SaveData::getInstance().changeBGMVolume(-0.01f);
 		}
@@ -157,6 +175,15 @@ namespace spe {
 		bool right = t2k::Input::isKeyDown(t2k::Input::KEYBORD_RIGHT);
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
+
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
+			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+		}
 
 		if (left) {
 			SaveData::getInstance().changeSEVolume(-0.01f);

@@ -4,6 +4,7 @@
 #include "physics.h"
 #include "bgm_manager.h"
 #include "se_manager.h"
+#include "joypad_manager.h"
 #include "scene.h"
 #include "screen.h"
 #include "object/object.h"

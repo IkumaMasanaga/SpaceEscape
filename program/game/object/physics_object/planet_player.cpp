@@ -152,6 +152,13 @@ namespace spe {
 
 		// ジャンプの入力時間での変動
 		bool jump = t2k::Input::isKeyReleaseTrigger(t2k::Input::KEYBORD_C);
+
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			jump |= joypad->isReleaseButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+		}
+
 		if (jump && VELOCITY.y < 0) {
 			addForceFrame(t2k::Vector3(0.0f, VELOCITY.y, 0.0f) * -0.5f);
 		}
@@ -282,6 +289,16 @@ namespace spe {
 		bool jump = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool attack = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 		bool attack_action = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_Z);
+
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || (joypad->getLeftThumbXValue() < -0.5f);
+			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || (0.5f < joypad->getLeftThumbXValue());
+			jump |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			attack |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_X) || joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_RIGHT_SHOULDER) || joypad->isPressRightTriggerTrigger();
+			attack_action |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B) || joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->isPressLeftTriggerTrigger();
+		}
 
 		// 移動と反転
 		if (left ^ right) {
@@ -421,8 +438,15 @@ namespace spe {
 			animation_->play("tackle", animation_time_["tackle"], false);
 		}
 
-		bool attack_action = t2k::Input::isKeyDown(t2k::Input::KEYBORD_Z);
 		bool jump = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
+		bool attack_action = t2k::Input::isKeyDown(t2k::Input::KEYBORD_Z);
+
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			jump |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			attack_action |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_B) || joypad->isPressButton(t2k::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->getLeftTriggerValue();
+		}
 
 		// ジャンプでキャンセル
 		// ジャンプ可能（地上にいる）の場合

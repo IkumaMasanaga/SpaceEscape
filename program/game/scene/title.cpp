@@ -162,6 +162,12 @@ namespace spe {
 
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+		}
+
 		if (enter) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::ENTER);
 			seq_.change(&Title::seqSelectMenu);
@@ -194,6 +200,15 @@ namespace spe {
 		bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
+
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+			up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+			down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+		}
 
 		bool is_key_pressed = false;
 

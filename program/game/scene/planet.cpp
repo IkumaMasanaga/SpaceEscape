@@ -225,6 +225,12 @@ namespace spe {
 		// ポーズ
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
+		}
+
 		if (pause) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::PAUSE);
 			seq_.change(&Planet::seqPause);
@@ -283,6 +289,14 @@ namespace spe {
 
 			bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 			bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
+
+			// ジョイパッド
+			t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+			if (joypad) {
+				enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+				back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+			}
+
 
 			if (enter) {
 				dxe::SEManager::getInstance().play(dxe::SEKey::ENTER);

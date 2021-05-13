@@ -288,6 +288,12 @@ namespace spe {
 		// ポーズ
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
+		// ジョイパッド
+		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		if (joypad) {
+			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
+		}
+
 		if (pause) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::PAUSE);
 			seq_.change(&Space::seqPause);
