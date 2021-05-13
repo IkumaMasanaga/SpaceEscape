@@ -4,6 +4,7 @@
 #include "prologue.h"
 #include "space.h"
 #include "config.h"
+#include "demo_movie.h"
 
 //--------------------------------------------------
 // Object
@@ -142,6 +143,10 @@ namespace spe {
 	}
 
 	void Title::lateUpdate() {
+		// BGMの再生が終わったらデモムービーを流す
+		if (!dxe::BGMManager::getInstance().isPlaying(dxe::BGMKey::TITLE)) {
+			dxe::DxEngine::getInstance().changeScene(DemoMovie::create<DemoMovie>());
+		}
 		seq_.update();
 	}
 

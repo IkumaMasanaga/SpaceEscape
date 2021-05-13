@@ -7,6 +7,7 @@
 #include "../scene/space.h"
 #include "../scene/planet.h"
 #include "../scene/epilogue.h"
+#include "../scene/demo_movie.h"
 
 #include "../player_status.h"
 #include "../save_data.h"
@@ -46,6 +47,10 @@ void DebugCommand::update() {
 		}
 		if (t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_W)) {
 			engine.changeScene(spe::Epilogue::create(spe::EndType::GOOD_SURVIVAL));
+		}
+
+		if (t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_M)) {
+			engine.changeScene(dxe::Scene::create<spe::DemoMovie>());
 		}
 
 		if (t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_S)) {

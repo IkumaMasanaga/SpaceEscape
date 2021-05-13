@@ -64,6 +64,7 @@ namespace dxe {
 			now_scene_->initialize();
 			t2k::Texture::releaseUnique();
 			t2k::Audio::releaseUnique();
+			t2k::Movie::releaseUnique();
 		}
 		return true;
 	}

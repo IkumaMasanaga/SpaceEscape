@@ -20,3 +20,4 @@
 #include "transform.h"
 #include "smooth_normalize.h"
 #include "joypad_xinput.h"
+#include "movie.h"

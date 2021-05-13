@@ -20,3 +20,4 @@
 #include "object/mover/render_object/animation_sprite.h"
 #include "object/mover/render_object/text.h"
 #include "object/mover/render_object/rect_renderer.h"
+#include "object/mover/render_object/movie_sprite.h"
