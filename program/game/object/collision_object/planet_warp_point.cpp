@@ -23,7 +23,7 @@ namespace spe {
 		bool warp = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_UP);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			warp |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_Y);
 		}

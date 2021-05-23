@@ -16,7 +16,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 #include "../timer.h"
 #include "../player_status.h"
@@ -166,8 +166,8 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("Space");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("Space");
 
 		//----------------------------------------------------------------------------------------------------
 	}
@@ -281,7 +281,7 @@ namespace spe {
 			dxe::SEManager::getInstance().play(dxe::SEKey::WARP);
 			// 惑星へ
 			engine.changeScene(Planet::create("space_to_planet", warp->getWarpDestination()));
-			t2k::Debug::log("to Planet");
+			//t2k::Debug::log("to Planet");
 			break;
 		}
 
@@ -289,7 +289,7 @@ namespace spe {
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
 		}

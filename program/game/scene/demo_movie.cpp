@@ -9,7 +9,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 
 namespace spe {
@@ -71,15 +71,22 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("DemoMovie");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("DemoMovie");
 
 		//----------------------------------------------------------------------------------------------------
 	}
 
 	void DemoMovie::lateUpdate() {
+
+		dxe::DxEngine& engine = dxe::DxEngine::getInstance();
+
+		// シーン遷移中は処理しない
+		if (engine.isInTransition()) return;
+
+		// 何かキーが押されるか動画が終了したらロゴへ
 		if ((CheckHitKeyAll() != 0) || (!movie_->isPlaying())) {
-			dxe::DxEngine::getInstance().changeScene(dxe::Scene::create<Logo>());
+			engine.changeScene(dxe::Scene::create<Logo>());
 		}
 	}
 

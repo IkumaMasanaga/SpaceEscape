@@ -12,7 +12,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 
 namespace spe {
@@ -136,18 +136,18 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("Title");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("Title");
 
 		//----------------------------------------------------------------------------------------------------
 	}
 
 	void Title::lateUpdate() {
+		if (!seq_.update()) return;
 		// BGMの再生が終わったらデモムービーを流す
 		if (!dxe::BGMManager::getInstance().isPlaying(dxe::BGMKey::TITLE)) {
 			dxe::DxEngine::getInstance().changeScene(DemoMovie::create<DemoMovie>());
 		}
-		seq_.update();
 	}
 
 	void Title::finalize() {
@@ -163,12 +163,12 @@ namespace spe {
 		}
 
 		// シーン遷移中は入力を受け付けない
-		if (dxe::DxEngine::getInstance().isInTransition()) return true;
+		if (dxe::DxEngine::getInstance().isInTransition()) return false;
 
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
 		}
@@ -199,7 +199,7 @@ namespace spe {
 		dxe::DxEngine& engine = dxe::DxEngine::getInstance();
 
 		// シーン遷移中はプレイヤーの入力を受け付けない
-		if (engine.isInTransition()) return true;
+		if (engine.isInTransition()) return false;
 
 		bool up = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_UP);
 		bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
@@ -207,7 +207,7 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
 			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);

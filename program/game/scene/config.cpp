@@ -17,7 +17,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 
 namespace spe {
@@ -90,8 +90,8 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("Prologue");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("Prologue");
 
 		//----------------------------------------------------------------------------------------------------
 	}
@@ -124,7 +124,7 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
 			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);

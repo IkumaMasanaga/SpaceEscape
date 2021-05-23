@@ -1,10 +1,14 @@
 #pragma once
 #include "DxLib.h"
+#include "shared_factory.h"
 
 
 namespace t2k {
 
-	class JoypadXInput final {
+	class JoypadXInput final : public SharedFactory<JoypadXInput> {
+	public:
+		using SharedPtr = std::shared_ptr<JoypadXInput>;
+		using WeakPtr = std::weak_ptr<JoypadXInput>;
 	private:
 		int input_type_;
 		XINPUT_STATE prev_state_;
@@ -27,9 +31,6 @@ namespace t2k {
 			BUTTON_BACK,
 			BUTTON_MAX
 		};
-
-		JoypadXInput(int input_type);
-		~JoypadXInput();
 
 		// çXêV
 		void update();
@@ -69,6 +70,8 @@ namespace t2k {
 		bool isReleaseRightThumbLeftTrigger(const float release_value = 0.0f) const;
 		bool isReleaseRightThumbRightTrigger(const float release_value = 0.0f) const;
 
+		// ê∂ê¨
+		static JoypadXInput::SharedPtr create(const int input_type);
 	};
 
 }

@@ -66,7 +66,7 @@ namespace spe {
 		bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
 			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);

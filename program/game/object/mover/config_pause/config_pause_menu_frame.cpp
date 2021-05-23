@@ -33,7 +33,7 @@ namespace spe {
 			bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
 
 			// ジョイパッド
-			t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+			t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 			if (joypad) {
 				up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
 				down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();

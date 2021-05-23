@@ -14,11 +14,11 @@ namespace dxe {
 		//====================================================================================================
 		// メンバ変数
 
-		t2k::JoypadXInput* joypad_ = nullptr;
+		t2k::JoypadXInput::SharedPtr joypad_ = nullptr;
 
 		//====================================================================================================
 	public:
-		~JoypadManager();
+		~JoypadManager() {}
 
 		//====================================================================================================
 		// メンバ関数
@@ -27,7 +27,7 @@ namespace dxe {
 		void update();
 
 		// ジョイパッドの取得
-		inline t2k::JoypadXInput* getJoypad() const { return joypad_; }
+		inline t2k::JoypadXInput::SharedPtr getJoypad() const { return joypad_; }
 
 		//====================================================================================================
 	};

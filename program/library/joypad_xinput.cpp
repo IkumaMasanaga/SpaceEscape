@@ -20,15 +20,6 @@ namespace t2k {
 		XINPUT_BUTTON_BACK,				// BUTTON_BACK,
 	};
 
-	JoypadXInput::JoypadXInput(int input_type) {
-		input_type_ = input_type;
-		update();
-	}
-
-	JoypadXInput::~JoypadXInput() {
-
-	}
-
 	void JoypadXInput::update() {
 
 		// 前フレームの入力状況を記録
@@ -160,6 +151,13 @@ namespace t2k {
 
 	float JoypadXInput::getRightThumbYValue() const {
 		return (now_state_.ThumbRY == -256 ? 0 : now_state_.ThumbRY) / (now_state_.ThumbRY < 0 ? 32768.0f : 32767.0f);
+	}
+
+	JoypadXInput::SharedPtr JoypadXInput::create(const int input_type) {
+		JoypadXInput::SharedPtr ptr = SharedFactory::create<JoypadXInput>();
+		ptr->input_type_ = input_type;
+		ptr->update();
+		return ptr;
 	}
 
 }

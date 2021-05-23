@@ -24,8 +24,9 @@ namespace spe {
 	void PlanetEnemyBullet::onCollision(CollisionObject::SharedPtr other, std::shared_ptr<dxe::CollisionRect> rect, const dxe::CorrectDirection direction) {
 
 		// マップかタックルと当たったら消える
-		if (rect->getName() != "map" || rect->getName() != "tackle") return;
-		destroyWithChild();
+		if (rect->getName() == "map" || rect->getName() == "tackle") {
+			destroyWithChild();
+		}
 
 	}
 

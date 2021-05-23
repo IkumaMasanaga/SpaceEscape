@@ -8,7 +8,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 
 namespace spe {
@@ -35,8 +35,8 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("Logo");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("Logo");
 
 		//----------------------------------------------------------------------------------------------------
 	}
@@ -51,7 +51,7 @@ namespace spe {
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C) || t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A) || joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
 		}
@@ -61,7 +61,7 @@ namespace spe {
 
 		// 時間経過か入力でシーン切り替え
 		if (IDLE_TIME_MAX < engine.getElapsedTimeForScene() || enter) {
-			t2k::Debug::log("To Title");
+			//t2k::Debug::log("To Title");
 			engine.changeScene(dxe::Scene::create<Title>(), TRANSITION_TIME);
 		}
 		

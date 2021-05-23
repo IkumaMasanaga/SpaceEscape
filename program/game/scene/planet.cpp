@@ -20,7 +20,7 @@
 
 //--------------------------------------------------
 // その他
-#include "../object/debug_command.h"
+//#include "../object/debug_command.h"
 
 #include "../timer.h"
 #include "../player_status.h"
@@ -147,8 +147,8 @@ namespace spe {
 		//----------------------------------------------------------------------------------------------------
 		// デバッグコマンド有効化
 
-		DebugCommand::create<DebugCommand>();
-		t2k::Debug::log("Planet");
+		//DebugCommand::create<DebugCommand>();
+		//t2k::Debug::log("Planet");
 
 		//----------------------------------------------------------------------------------------------------
 	}
@@ -213,7 +213,7 @@ namespace spe {
 			// 宇宙へ
 			if (warp->getWarpDestination() == "space") {
 				engine.changeScene(Space::create(id_));
-				t2k::Debug::log("to Space");
+				//t2k::Debug::log("to Space");
 			}
 			// 惑星へ
 			else {
@@ -226,7 +226,7 @@ namespace spe {
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
 		// ジョイパッド
-		t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
 			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
 		}
@@ -291,7 +291,7 @@ namespace spe {
 			bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 			// ジョイパッド
-			t2k::JoypadXInput* joypad = dxe::JoypadManager::getInstance().getJoypad();
+			t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 			if (joypad) {
 				enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
 				back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
