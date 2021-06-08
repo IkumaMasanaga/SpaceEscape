@@ -22,10 +22,10 @@ namespace dxe {
 	// BGMの再生
 	// BGMの停止
 	// BGMのボリューム調整
-	class BGMManager final : public t2k::Singleton<BGMManager> {
+	class BGMManager final : public mylib::Singleton<BGMManager> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<BGMManager>;
+		friend class mylib::Singleton<BGMManager>;
 		// releaceAllを呼ぶため
 		friend class DxEngine;
 

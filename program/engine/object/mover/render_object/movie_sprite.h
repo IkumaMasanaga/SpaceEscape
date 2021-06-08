@@ -13,7 +13,7 @@ namespace dxe {
 		// ƒƒ“ƒo•Ï”
 
 		// “®‰æ
-		t2k::Movie::SharedPtr movie_ = nullptr;
+		mylib::Movie::SharedPtr movie_ = nullptr;
 
 		// ƒ{ƒŠƒ…[ƒ€
 		float volume_ = 1.0f;

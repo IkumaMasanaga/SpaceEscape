@@ -16,7 +16,7 @@ namespace dxe {
 		// •â³‚µ‚½‚Æ‚«‚Ì‚İ
 		if (direction != CorrectDirection::NONE) {
 			// –€C‚Á‚Û‚¢ŒvZ
-			velocity_ -= ((velocity_ * friction_) * t2k::Time::getDeltaTime());
+			velocity_ -= ((velocity_ * friction_) * mylib::Time::getDeltaTime());
 
 			// •â³•ûŒü‚É‘Î‚µ‚Ä‘¬“x‚ğ•Ï“®‚³‚¹‚é
 			if (direction == CorrectDirection::UP || direction == CorrectDirection::DOWN) {

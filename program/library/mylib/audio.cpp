@@ -1,9 +1,9 @@
 #include "DxLib.h"
-#include "util.h"
+#include "../util.h"
 #include "audio.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	Audio::SharedPtr Audio::fromFlyWeightLoader(const std::string& file_name, const std::string& file_path) {
 		Audio::SharedPtr ptr = SharedFactory::create<Audio>();

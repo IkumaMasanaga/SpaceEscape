@@ -218,7 +218,7 @@ namespace spe {
 
 		// 音も変更する
 		if (0.0f < view_red_alpha) {
-			warning_time_count_ += t2k::Time::getDeltaTime();
+			warning_time_count_ += mylib::Time::getDeltaTime();
 			// 再生間隔
 			const float PLAY_INTERVAL = 1.0f;
 			if (PLAY_INTERVAL  < warning_time_count_) {
@@ -289,9 +289,9 @@ namespace spe {
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
+			pause |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_START);
 		}
 
 		if (pause) {

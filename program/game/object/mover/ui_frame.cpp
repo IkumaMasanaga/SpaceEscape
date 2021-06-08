@@ -99,7 +99,7 @@ namespace spe {
 		UIFrame::SharedPtr ptr = dxe::Mover::create<UIFrame>();
 
 		// ”wŒi‚Ì¶¬
-		dxe::RectRenderer::SharedPtr back = dxe::RectRenderer::create(MIN_SIZE, MIN_SIZE, t2k::Color(0.5f));
+		dxe::RectRenderer::SharedPtr back = dxe::RectRenderer::create(MIN_SIZE, MIN_SIZE, mylib::Color(0.5f));
 		back->alpha_ = desc.back_alpha_;
 		back->color_ = desc.back_color_;
 		back->render_position_from_camera_ = desc.render_position_from_camera_;
@@ -109,7 +109,7 @@ namespace spe {
 		ptr->pushChild(back);
 
 		// ŠO˜g‚Ì¶¬
-		dxe::RectRenderer::SharedPtr frame = dxe::RectRenderer::create(MIN_SIZE, MIN_SIZE, t2k::Color(1.0f), false);
+		dxe::RectRenderer::SharedPtr frame = dxe::RectRenderer::create(MIN_SIZE, MIN_SIZE, mylib::Color(1.0f), false);
 		frame->color_ = desc.frame_color_;
 		frame->render_position_from_camera_ = desc.render_position_from_camera_;
 		ptr->frame_width_ = &frame->width_;
@@ -118,7 +118,7 @@ namespace spe {
 		ptr->pushChild(frame);
 
 		// “à˜g‚Ì¶¬
-		dxe::RectRenderer::SharedPtr inner_frame = dxe::RectRenderer::create(0, 0, t2k::Color(1.0f), false);
+		dxe::RectRenderer::SharedPtr inner_frame = dxe::RectRenderer::create(0, 0, mylib::Color(1.0f), false);
 		inner_frame->color_ = desc.inner_color_;
 		inner_frame->render_position_from_camera_ = desc.render_position_from_camera_;
 		ptr->inner_width_ = &inner_frame->width_;

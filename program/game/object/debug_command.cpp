@@ -17,8 +17,8 @@ void DebugCommand::onCreated() {
 	is_update_always_ = true;
 	update_priority_ = -FLT_MAX;
 	setName("DebugCommand");
-	t2k::Debug::clearLog();
-	t2k::Debug::log("DebugCommand ON");
+	mylib::Debug::clearLog();
+	mylib::Debug::log("DebugCommand ON");
 }
 
 void DebugCommand::update() {
@@ -136,7 +136,7 @@ void DebugCommand::update() {
 
 		// ログのクリア
 		if (t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C)) {
-			t2k::Debug::clearLog();
+			mylib::Debug::clearLog();
 		}
 
 		// 衝突判定矩形描画切り替え

@@ -1,7 +1,7 @@
 #include "joypad_xinput.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	static int buttons[JoypadXInput::BUTTON_MAX] = {
 		XINPUT_BUTTON_A,				// BUTTON_A,

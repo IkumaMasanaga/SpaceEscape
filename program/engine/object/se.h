@@ -21,7 +21,7 @@ namespace dxe {
 		// メンバ変数
 
 		// Audioハンドル
-		t2k::Audio::SharedPtr audio_ = nullptr;
+		mylib::Audio::SharedPtr audio_ = nullptr;
 
 		// ボリューム
 		float volume_ = 1.0f;
@@ -50,7 +50,7 @@ namespace dxe {
 		// メンバ関数
 
 		// Audioの取得（参照用）
-		inline const t2k::Audio::SharedPtr getAudio() const { return audio_; }
+		inline const mylib::Audio::SharedPtr getAudio() const { return audio_; }
 
 		// ボリュームの取得
 		inline float getVolume() const { return volume_; }

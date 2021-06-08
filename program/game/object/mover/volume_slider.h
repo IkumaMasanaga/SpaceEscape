@@ -49,7 +49,7 @@ namespace spe {
 		void setRenderPriority(const float priority);
 
 		// óLå¯ó ÇÃêFÇïœçXÇ∑ÇÈ
-		inline void setActiveColor(const t2k::Color& color) { active_->color_ = color; }
+		inline void setActiveColor(const mylib::Color& color) { active_->color_ = color; }
 
 		//====================================================================================================
 		// staticä÷êî

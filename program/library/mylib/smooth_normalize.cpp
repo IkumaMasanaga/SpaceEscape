@@ -3,7 +3,7 @@
 #include "time.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	void SmoothNormalize::setCondition(bool* negative, bool* positive) {
 		negative_ = negative;

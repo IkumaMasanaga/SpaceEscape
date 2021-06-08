@@ -10,7 +10,7 @@ namespace spe {
 		frame_desc.width_ = 250;
 		frame_desc.height_ = 400;
 		frame_desc.interval_ = 20;
-		frame_desc.inner_color_ = t2k::Color(0.5f);
+		frame_desc.inner_color_ = mylib::Color(0.5f);
 
 		frame_ = UIFrame::create(frame_desc);
 		pushChild(frame_);
@@ -33,10 +33,10 @@ namespace spe {
 			bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
 
 			// ジョイパッド
-			t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+			mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 			if (joypad) {
-				up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
-				down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+				up |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+				down |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
 			}
 
 			is_key_pressed_select_ = false;
@@ -54,7 +54,7 @@ namespace spe {
 				dxe::SEManager::getInstance().play(dxe::SEKey::SELECT);
 				// 色を変更する
 				for (int i = 0; i < (int)texts_.size(); ++i) {
-					texts_[i]->color_ = (select_ == i) ? t2k::Color(1.0f, 0.0f, 0.0f) : t2k::Color(1.0f);
+					texts_[i]->color_ = (select_ == i) ? mylib::Color(1.0f, 0.0f, 0.0f) : mylib::Color(1.0f);
 				}
 			}
 

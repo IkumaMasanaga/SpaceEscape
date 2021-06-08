@@ -36,10 +36,10 @@ namespace spe {
 		TRUE_PLUTO,				// 夢オチエンド（冥王星）
 	};
 
-	class SaveData final : public t2k::Singleton<SaveData> {
+	class SaveData final : public mylib::Singleton<SaveData> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<SaveData>;
+		friend class mylib::Singleton<SaveData>;
 		// initialize, finalizeを呼ぶため
 		friend class sys::DxMain;
 

@@ -63,8 +63,8 @@ namespace dxe {
 			Physics::destroy();
 			now_scene_->initialize();
 			t2k::Texture::releaseUnique();
-			t2k::Audio::releaseUnique();
-			t2k::Movie::releaseUnique();
+			mylib::Audio::releaseUnique();
+			mylib::Movie::releaseUnique();
 		}
 		return true;
 	}

@@ -154,9 +154,9 @@ namespace spe {
 		bool jump = t2k::Input::isKeyReleaseTrigger(t2k::Input::KEYBORD_C);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			jump |= joypad->isReleaseButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			jump |= joypad->isReleaseButtonTrigger(mylib::JoypadXInput::BUTTON_A);
 		}
 
 		if (jump && VELOCITY.y < 0) {
@@ -182,7 +182,7 @@ namespace spe {
 
 		// 動いている時のみ軌跡を生成する
 		if (1.0f < std::abs(VELOCITY.x) || VELOCITY.y) {
-			generate_locus_time_count_ += t2k::Time::getDeltaTime();
+			generate_locus_time_count_ += mylib::Time::getDeltaTime();
 
 			// 生成時間
 			const float GENERATE_TIME = 0.07f;
@@ -291,13 +291,13 @@ namespace spe {
 		bool attack_action = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_Z);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || (joypad->getLeftThumbXValue() < -0.5f);
-			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || (0.5f < joypad->getLeftThumbXValue());
-			jump |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			attack |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_X) || joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_RIGHT_SHOULDER) || joypad->isPressRightTriggerTrigger();
-			attack_action |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B) || joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->isPressLeftTriggerTrigger();
+			left |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_LEFT) || (joypad->getLeftThumbXValue() < -0.5f);
+			right |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_RIGHT) || (0.5f < joypad->getLeftThumbXValue());
+			jump |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			attack |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_X) || joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_RIGHT_SHOULDER) || joypad->isPressRightTriggerTrigger();
+			attack_action |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B) || joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->isPressLeftTriggerTrigger();
 		}
 
 		// 移動と反転
@@ -442,10 +442,10 @@ namespace spe {
 		bool attack_action = t2k::Input::isKeyDown(t2k::Input::KEYBORD_Z);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			jump |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			attack_action |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_B) || joypad->isPressButton(t2k::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->getLeftTriggerValue();
+			jump |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			attack_action |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_B) || joypad->isPressButton(mylib::JoypadXInput::BUTTON_LEFT_SHOULDER) || joypad->getLeftTriggerValue();
 		}
 
 		// ジャンプでキャンセル
@@ -523,7 +523,7 @@ namespace spe {
 		}
 
 		// SE
-		tackle_se_count_ += t2k::Time::getDeltaTime();
+		tackle_se_count_ += mylib::Time::getDeltaTime();
 		// SE呼び出し間隔
 		const float TACKLE_SE_INTERVAL = 0.05f;
 		if (TACKLE_SE_INTERVAL < tackle_se_count_) {
@@ -609,8 +609,8 @@ namespace spe {
 
 		// ダメージ後の無敵時間
 		if (is_damage_) {
-			damage_time_count_ += t2k::Time::getDeltaTime();
-			flash_time_count_ += t2k::Time::getDeltaTime();
+			damage_time_count_ += mylib::Time::getDeltaTime();
+			flash_time_count_ += mylib::Time::getDeltaTime();
 
 			// 点滅時間
 			const float FLASH_TIME = 0.1f;

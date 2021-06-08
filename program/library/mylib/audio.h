@@ -1,24 +1,23 @@
 #pragma once
 #include <string>
-#include "shared_factory.h"
-#include "shared_flyweight_map.h"
+#include "../shared_factory.h"
+#include "../shared_flyweight_map.h"
 
 
-namespace t2k {
+namespace mylib {
 
-	class Movie final : public SharedFactory<Movie>, public SharedFlyweightMapInterface<std::string, Movie> {
+	class Audio final : public t2k::SharedFactory<Audio>, public t2k::SharedFlyweightMapInterface<std::string, Audio> {
 	public:
-		using SharedPtr = std::shared_ptr<Movie>;
-		using WeakPtr = std::weak_ptr<Movie>;
+		using SharedPtr = std::shared_ptr<Audio>;
+		using WeakPtr = std::weak_ptr<Audio>;
 	private:
 		// fromFlyWeightLoader, finalize‚ğŒÄ‚Ô‚½‚ß
-		friend class SharedFlyweightMapInterface<std::string, Movie>;
+		friend class t2k::SharedFlyweightMapInterface<std::string, Audio>;
 
 		//====================================================================================================
 		// ƒƒ“ƒo•Ï”
-		int image_ = 0;
-		int width_ = 0;
-		int height_ = 0;
+		int sound_ = 0;
+		float total_time_ = 0.0f;
 		std::string file_path_;
 
 		//====================================================================================================
@@ -27,21 +26,20 @@ namespace t2k {
 
 		//====================================================================================================
 		// staticŠÖ”
-		static Movie::SharedPtr fromFlyWeightLoader(const std::string& file_name, const std::string& file_path);
+		static Audio::SharedPtr fromFlyWeightLoader(const std::string& file_name, const std::string& file_path);
 
 	public:
-		Movie() {}
-		~Movie() {}
+		Audio() {}
+		~Audio() {}
 
 		//====================================================================================================
 		// ƒƒ“ƒoŠÖ”
-		inline int getImage() const { return image_; }
-		inline int getWidth() const { return width_; }
-		inline int getHeight() const { return height_; }
+		inline int getSound() const { return sound_; }
+		inline float getTotalTime() const { return total_time_; }
 
 		//====================================================================================================
 		// staticŠÖ”
-		static Movie::SharedPtr createFromFile(const std::string& file_path);
+		static Audio::SharedPtr createFromFile(const std::string& file_path);
 	};
 
 }

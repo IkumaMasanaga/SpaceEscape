@@ -10,7 +10,7 @@ namespace spe {
 		frame_desc.width_ = 680;
 		frame_desc.height_ = 400;
 		frame_desc.interval_ = 20;
-		frame_desc.inner_color_ = t2k::Color(0.5f);
+		frame_desc.inner_color_ = mylib::Color(0.5f);
 
 		frame_ = UIFrame::create(frame_desc);
 		pushChild(frame_);

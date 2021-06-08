@@ -1,7 +1,7 @@
 #include "time.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	void Time::initialize() {
 		clock_start_ = std::chrono::system_clock::now();

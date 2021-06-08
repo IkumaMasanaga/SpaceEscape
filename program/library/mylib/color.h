@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace t2k {
+namespace mylib {
 
 	class Color final {
 	public:

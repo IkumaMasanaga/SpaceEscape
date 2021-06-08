@@ -8,10 +8,10 @@ namespace dxe {
 	// 生成されたPhysicsObjectは自動的にこのクラスに登録されます
 	// 物理演算処理実行
 	// 重力の設定
-	class Physics final : public t2k::Singleton<Physics> {
+	class Physics final : public mylib::Singleton<Physics> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<Physics>;
+		friend class mylib::Singleton<Physics>;
 		// updateを呼ぶため
 		friend class Scene;
 		// 生成とともにphysics_objects_に登録するため

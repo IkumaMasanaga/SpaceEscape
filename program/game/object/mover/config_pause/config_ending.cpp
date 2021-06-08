@@ -66,12 +66,12 @@ namespace spe {
 		bool down = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_DOWN);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
-			up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
-			down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
+			up |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+			down |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
 		}
 
 		is_key_pressed_select_ = false;
@@ -100,7 +100,7 @@ namespace spe {
 			dxe::SEManager::getInstance().play(dxe::SEKey::SELECT);
 			for (int i = 0; i < (int)render_endings_.size(); ++i) {
 				render_endings_[i]->changeText(endings_[start_index_ + i]);
-				render_endings_[i]->color_ = (select_ == i) ? t2k::Color(1.0f, 0.0f, 0.0f) : t2k::Color(1.0f);
+				render_endings_[i]->color_ = (select_ == i) ? mylib::Color(1.0f, 0.0f, 0.0f) : mylib::Color(1.0f);
 			}
 		}
 

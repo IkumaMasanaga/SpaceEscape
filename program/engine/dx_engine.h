@@ -7,10 +7,10 @@ namespace dxe {
 
 	class Scene;
 
-	class DxEngine final : public t2k::Singleton<DxEngine> {
+	class DxEngine final : public mylib::Singleton<DxEngine> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<DxEngine>;
+		friend class mylib::Singleton<DxEngine>;
 		// initialize, update, finalizeを呼ぶため
 		friend class sys::DxMain;
 
@@ -47,7 +47,7 @@ namespace dxe {
 		float transition_complete_time_ = 0.3f;
 
 		// Screen遷移の色
-		t2k::Color transition_color_ = t2k::Color(0);
+		mylib::Color transition_color_ = mylib::Color(0);
 
 		//====================================================================================================
 		// メンバ関数
@@ -89,7 +89,7 @@ namespace dxe {
 		inline void setTransitionCompleteTime(const float complete_time) { transition_complete_time_ = complete_time; }
 
 		// Scene遷移の色を設定
-		inline void setTransitionColor(const t2k::Color color) { transition_color_ = color; }
+		inline void setTransitionColor(const mylib::Color color) { transition_color_ = color; }
 
 		// Scene遷移中か
 		inline bool isInTransition() const { return 0.0f < transition_alpha_; }

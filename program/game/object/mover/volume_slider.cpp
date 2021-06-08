@@ -28,31 +28,31 @@ namespace spe {
 		const int KNOB_SIZE = 20;
 
 		// ”wŒi
-		dxe::RectRenderer::SharedPtr back = dxe::RectRenderer::create(FRAME_WIDTH, FRAME_HEIGHT, t2k::Color(0.5f));
+		dxe::RectRenderer::SharedPtr back = dxe::RectRenderer::create(FRAME_WIDTH, FRAME_HEIGHT, mylib::Color(0.5f));
 		ptr->pushChild(back);
 		back->render_position_from_camera_ = 0.0f;
 		ptr->rects_[0] = back;
 
 		// —LŒø—Ê
-		ptr->active_ = dxe::RectRenderer::create((int)(FRAME_WIDTH * *volume), FRAME_HEIGHT, t2k::Color(1.0f));
+		ptr->active_ = dxe::RectRenderer::create((int)(FRAME_WIDTH * *volume), FRAME_HEIGHT, mylib::Color(1.0f));
 		ptr->pushChild(ptr->active_);
 		ptr->active_->render_position_from_camera_ = 0.0f;
 		ptr->rects_[1] = ptr->active_;
 
 		// ˜g
-		dxe::RectRenderer::SharedPtr frame = dxe::RectRenderer::create(FRAME_WIDTH, FRAME_HEIGHT, t2k::Color(0.0f), false);
+		dxe::RectRenderer::SharedPtr frame = dxe::RectRenderer::create(FRAME_WIDTH, FRAME_HEIGHT, mylib::Color(0.0f), false);
 		ptr->pushChild(frame);
 		frame->render_position_from_camera_ = 0.0f;
 		ptr->rects_[2] = frame;
 
 		// ‚Â‚Ü‚Ý
-		dxe::RectRenderer::SharedPtr knob = dxe::RectRenderer::create(KNOB_SIZE, KNOB_SIZE, t2k::Color(1.0f));
+		dxe::RectRenderer::SharedPtr knob = dxe::RectRenderer::create(KNOB_SIZE, KNOB_SIZE, mylib::Color(1.0f));
 		ptr->pushChild(knob);
 		knob->render_position_from_camera_ = 0.0f;
 		ptr->rects_[3] = knob;
 		ptr->knob_position_ = &knob->transform_.position_;
 
-		dxe::RectRenderer::SharedPtr knob_frame = dxe::RectRenderer::create(KNOB_SIZE, KNOB_SIZE, t2k::Color(0.0f), false);
+		dxe::RectRenderer::SharedPtr knob_frame = dxe::RectRenderer::create(KNOB_SIZE, KNOB_SIZE, mylib::Color(0.0f), false);
 		ptr->pushChild(knob_frame);
 		knob_frame->render_position_from_camera_ = 0.0f;
 		ptr->rects_[4] = knob_frame;

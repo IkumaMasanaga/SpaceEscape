@@ -1,9 +1,9 @@
 #include "DxLib.h"
-#include "util.h"
+#include "../util.h"
 #include "movie.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	Movie::SharedPtr Movie::fromFlyWeightLoader(const std::string& file_name, const std::string& file_path) {
 		Movie::SharedPtr ptr = SharedFactory::create<Movie>();

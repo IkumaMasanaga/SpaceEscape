@@ -1,0 +1,9 @@
+#pragma once
+#include "audio.h"
+#include "color.h"
+#include "debug.h"
+#include "joypad_xinput.h"
+#include "movie.h"
+#include "singleton.h"
+#include "smooth_normalize.h"
+#include "time.h"

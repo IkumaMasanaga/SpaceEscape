@@ -4,10 +4,10 @@
 
 namespace spe {
 
-	class Timer final : public t2k::Singleton<Timer> {
+	class Timer final : public mylib::Singleton<Timer> {
 	private:
 		// Šî’êƒNƒ‰ƒX‚Å¶¬‚·‚é‚½‚ß
-		friend class t2k::Singleton<Timer>;
+		friend class mylib::Singleton<Timer>;
 
 		Timer() {}
 

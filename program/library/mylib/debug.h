@@ -3,7 +3,7 @@
 #include "DxLib.h"
 
 
-namespace t2k {
+namespace mylib {
 
 	class Debug final {
 	private:

@@ -77,12 +77,12 @@ namespace spe {
 			right_ = t2k::Input::isKeyDown(t2k::Input::KEYBORD_RIGHT);
 
 			// ジョイパッド
-			t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+			mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 			if (joypad) {
-				up_ |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
-				down_ |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
-				left_ |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->isPressLeftThumbLeftTrigger();
-				right_ |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || joypad->isPressLeftThumbRightTrigger();
+				up_ |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+				down_ |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+				left_ |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->isPressLeftThumbLeftTrigger();
+				right_ |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_RIGHT) || joypad->isPressLeftThumbRightTrigger();
 			}
 
 		}
@@ -127,7 +127,7 @@ namespace spe {
 		transform_.position_ += (move * speed);
 
 		// ジェット生成
-		generate_jet_time_count_ += t2k::Time::getDeltaTime();
+		generate_jet_time_count_ += mylib::Time::getDeltaTime();
 		if (0 < speed && (generate_jet_time_ * (speed_max_ / speed)) < generate_jet_time_count_) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::JET);
 			generate_jet_time_count_ = 0.0f;

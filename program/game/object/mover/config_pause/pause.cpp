@@ -70,11 +70,11 @@ namespace spe {
 		bool pause = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_SPACE);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
-			pause |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_START);
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
+			pause |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_START);
 		}
 
 		// 決定キーが押されたとき

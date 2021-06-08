@@ -64,7 +64,7 @@ namespace dxe {
 		// メンバ関数
 
 		// 速度に直接力を加える（時間単位）
-		inline void addForceTime(const t2k::Vector3& force) { velocity_ += (force * t2k::Time::getDeltaTime()); }
+		inline void addForceTime(const t2k::Vector3& force) { velocity_ += (force * mylib::Time::getDeltaTime()); }
 
 		// 速度に直接力を加える（フレーム単位）
 		inline void addForceFrame(const t2k::Vector3& force) { velocity_ += force; }

@@ -17,10 +17,10 @@ namespace dxe {
 	// 生成されたColliisionObjectは自動的にこのクラスに登録されます
 	// 衝突判定実行
 	// 衝突判定矩形描画（デバッグ用）
-	class CollisionManager final : public t2k::Singleton<CollisionManager> {
+	class CollisionManager final : public mylib::Singleton<CollisionManager> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<CollisionManager>;
+		friend class mylib::Singleton<CollisionManager>;
 		// updatePrevPosition, collisionを呼ぶため
 		friend class Scene;
 		// renderDebugAreaを呼ぶため

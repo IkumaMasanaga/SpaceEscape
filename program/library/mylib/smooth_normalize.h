@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace t2k {
+namespace mylib {
 
 	// 各条件に合致した場合に少しずつ値が-1.0f～1.0fの間を増減するクラス
 	// 最初に条件を設定して後はgetValueで値を受け取るだけ

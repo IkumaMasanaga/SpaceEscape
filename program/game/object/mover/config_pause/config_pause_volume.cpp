@@ -80,12 +80,12 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
-			up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
-			down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
+			up |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+			down |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
 		}
 
 		bool is_key_pressed = false;
@@ -103,7 +103,7 @@ namespace spe {
 			dxe::SEManager::getInstance().play(dxe::SEKey::SELECT);
 			// 色を変更する
 			for (int i = 0; i < (int)texts_.size(); ++i) {
-				texts_[i]->color_ = (select_ == i) ? t2k::Color(1.0f, 0.0f, 0.0f) : t2k::Color(1.0f);
+				texts_[i]->color_ = (select_ == i) ? mylib::Color(1.0f, 0.0f, 0.0f) : mylib::Color(1.0f);
 			}
 		}
 
@@ -129,7 +129,7 @@ namespace spe {
 	bool ConfigPauseVolume::seqBGM() {
 
 		if (seq_.isStart()) {
-			bgm_slider_->setActiveColor(t2k::Color(1.0f, 0.0f, 0.0f));
+			bgm_slider_->setActiveColor(mylib::Color(1.0f, 0.0f, 0.0f));
 		}
 
 		bool left = t2k::Input::isKeyDown(t2k::Input::KEYBORD_LEFT);
@@ -138,12 +138,12 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
-			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+			left |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
+			right |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
 		}
 
 		if (left) {
@@ -158,7 +158,7 @@ namespace spe {
 		}
 		else if (back) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::BACK);
-			bgm_slider_->setActiveColor(t2k::Color(1.0f));
+			bgm_slider_->setActiveColor(mylib::Color(1.0f));
 			seq_.change(&ConfigPauseVolume::seqMenu);
 		}
 
@@ -168,7 +168,7 @@ namespace spe {
 	bool ConfigPauseVolume::seqSE() {
 
 		if (seq_.isStart()) {
-			se_slider_->setActiveColor(t2k::Color(1.0f, 0.0f, 0.0f));
+			se_slider_->setActiveColor(mylib::Color(1.0f, 0.0f, 0.0f));
 		}
 
 		bool left = t2k::Input::isKeyDown(t2k::Input::KEYBORD_LEFT);
@@ -177,12 +177,12 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			left |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
-			right |= joypad->isPressButton(t2k::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
+			left |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_LEFT) || joypad->getLeftThumbXValue() < -0.5f;
+			right |= joypad->isPressButton(mylib::JoypadXInput::BUTTON_DPAD_RIGHT) || 0.5f < joypad->getLeftThumbXValue();
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
 		}
 
 		if (left) {
@@ -197,7 +197,7 @@ namespace spe {
 		}
 		else if (back) {
 			dxe::SEManager::getInstance().play(dxe::SEKey::BACK);
-			se_slider_->setActiveColor(t2k::Color(1.0f));
+			se_slider_->setActiveColor(mylib::Color(1.0f));
 			seq_.change(&ConfigPauseVolume::seqMenu);
 		}
 

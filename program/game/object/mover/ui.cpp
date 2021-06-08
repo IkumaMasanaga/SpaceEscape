@@ -119,7 +119,7 @@ namespace spe {
 		energy_desc.height_ = FONT_SIZE;
 		energy_desc.interval_ = FLAME_THICKNESS >> 1;
 		energy_desc.render_position_from_camera_ = 0.0f;
-		energy_desc.inner_color_ = t2k::Color(0.5f);
+		energy_desc.inner_color_ = mylib::Color(0.5f);
 		energy_desc.is_open_ = true;
 
 		UIFrame::SharedPtr energy_frame = UIFrame::create(energy_desc);
@@ -129,14 +129,14 @@ namespace spe {
 
 		ptr->energy_start_x_ = HP_START_X - (FONT_SIZE_HALF / 2);
 
-		ptr->energy_bar_ = dxe::RectRenderer::create(0, energy_desc.height_ - FLAME_THICKNESS, t2k::Color(0.0f, 0.6f, 1.0f));
+		ptr->energy_bar_ = dxe::RectRenderer::create(0, energy_desc.height_ - FLAME_THICKNESS, mylib::Color(0.0f, 0.6f, 1.0f));
 		ptr->energy_bar_->transform_.position_ = t2k::Vector3(ptr->energy_start_x_, ENERGY_Y + FONT_SIZE_HALF, 0.0f);
 		ptr->energy_bar_->render_priority_ = PRIORITY;
 		ptr->energy_bar_->render_position_from_camera_ = 0.0f;
 		ptr->pushChild(ptr->energy_bar_);
 
 		// 仮消費エネルギーバー
-		ptr->temp_energy_bar_ = dxe::RectRenderer::create(0, energy_desc.height_ - FLAME_THICKNESS, t2k::Color(1.0f));
+		ptr->temp_energy_bar_ = dxe::RectRenderer::create(0, energy_desc.height_ - FLAME_THICKNESS, mylib::Color(1.0f));
 		ptr->temp_energy_bar_->transform_.position_ = t2k::Vector3(ptr->energy_start_x_, ENERGY_Y + FONT_SIZE_HALF, 0.0f);
 		ptr->temp_energy_bar_->alpha_ = 0.5f;
 		ptr->temp_energy_bar_->render_priority_ = PRIORITY;
@@ -201,7 +201,7 @@ namespace spe {
 		item_desc.height_ = FONT_SIZE;
 		item_desc.interval_ = 2;
 		item_desc.render_position_from_camera_ = 0.0f;
-		item_desc.inner_color_ = t2k::Color(0.5f);
+		item_desc.inner_color_ = mylib::Color(0.5f);
 		item_desc.is_open_ = true;
 
 		const float ITEM_START_X = LEFT_X + (FONT_SIZE * 4);

@@ -1,11 +1,11 @@
 #pragma once
 #include "DxLib.h"
-#include "shared_factory.h"
+#include "../shared_factory.h"
 
 
-namespace t2k {
+namespace mylib {
 
-	class JoypadXInput final : public SharedFactory<JoypadXInput> {
+	class JoypadXInput final : public t2k::SharedFactory<JoypadXInput> {
 	public:
 		using SharedPtr = std::shared_ptr<JoypadXInput>;
 		using WeakPtr = std::weak_ptr<JoypadXInput>;

@@ -1,7 +1,7 @@
 #include "DxLib.h"
 #include "dx_main.h"
 #include "../library/input.h"
-#include "../library/time.h"
+#include "../library/mylib/time.h"
 #include "../support/FrameRateController.h"
 #include "../engine/dx_engine.h"
 #include "../game/scene/logo.h"
@@ -52,7 +52,7 @@ namespace sys {
 		SetDrawScreen(DX_SCREEN_BACK);
 
 		// 時間制御の初期化
-		t2k::Time::initialize();
+		mylib::Time::initialize();
 
 		// キー入力制御の初期化
 		t2k::Input::initialize();
@@ -76,7 +76,7 @@ namespace sys {
 		while (engine.is_playing_game_) {
 
 			// 時間制御更新
-			t2k::Time::update();
+			mylib::Time::update();
 
 			// 毎フレーム呼ぶ
 			if (ProcessMessage() == -1) break;

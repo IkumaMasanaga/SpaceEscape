@@ -168,9 +168,9 @@ namespace spe {
 		bool enter = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_C);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
 		}
 
 		if (enter) {
@@ -207,12 +207,12 @@ namespace spe {
 		bool back = t2k::Input::isKeyDownTrigger(t2k::Input::KEYBORD_X);
 
 		// ジョイパッド
-		t2k::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
+		mylib::JoypadXInput::SharedPtr joypad = dxe::JoypadManager::getInstance().getJoypad();
 		if (joypad) {
-			enter |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_A);
-			back |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_B);
-			up |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
-			down |= joypad->isPressButtonTrigger(t2k::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
+			enter |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_A);
+			back |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_B);
+			up |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_UP) || joypad->isPressLeftThumbUpTrigger();
+			down |= joypad->isPressButtonTrigger(mylib::JoypadXInput::BUTTON_DPAD_DOWN) || joypad->isPressLeftThumbDownTrigger();
 		}
 
 		bool is_key_pressed = false;
@@ -231,7 +231,7 @@ namespace spe {
 			dxe::SEManager::getInstance().play(dxe::SEKey::SELECT);
 			for (unsigned int i = 0; i < select_texts_.size(); ++i) {
 				// 選択中の項目は色を変える
-				select_texts_[i]->color_ = (i == selected_) ? t2k::Color(1.0f, 0.0f, 0.0f) : t2k::Color(1.0f);
+				select_texts_[i]->color_ = (i == selected_) ? mylib::Color(1.0f, 0.0f, 0.0f) : mylib::Color(1.0f);
 			}
 		}
 

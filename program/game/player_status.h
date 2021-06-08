@@ -7,10 +7,10 @@ namespace spe {
 
 	enum class PlanetID;
 
-	class PlayerStatus final : public t2k::Singleton<PlayerStatus> {
+	class PlayerStatus final : public mylib::Singleton<PlayerStatus> {
 	private:
 		// Šî’êƒNƒ‰ƒX‚Å¶¬‚·‚é‚½‚ß
-		friend class t2k::Singleton<PlayerStatus>;
+		friend class mylib::Singleton<PlayerStatus>;
 
 		PlayerStatus() {}
 

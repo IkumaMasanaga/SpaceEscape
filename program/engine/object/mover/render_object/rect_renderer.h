@@ -30,7 +30,7 @@ namespace dxe {
 		int height_ = 32;
 
 		// F
-		t2k::Color color_;
+		mylib::Color color_;
 
 		// “h‚è‚Â‚Ô‚µƒtƒ‰ƒO
 		bool is_fill_ = true;
@@ -39,7 +39,7 @@ namespace dxe {
 		// staticŠÖ”
 
 		// ¶¬
-		static RectRenderer::SharedPtr create(const int width, const int height, const t2k::Color& color, const bool is_fill = true);
+		static RectRenderer::SharedPtr create(const int width, const int height, const mylib::Color& color, const bool is_fill = true);
 
 		//====================================================================================================
 	};

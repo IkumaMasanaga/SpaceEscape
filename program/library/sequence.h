@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include "time.h"
+#include "mylib/time.h"
 
 namespace t2k {
 
@@ -33,7 +33,7 @@ namespace t2k {
 		// arg1... フレーム間の経過時間( 秒のデルタタイム )
 		//===================================================================================
 		inline bool update() {
-			sum_time_ += Time::getDeltaTime();
+			sum_time_ += mylib::Time::getDeltaTime();
 			bool ret = now_(object_);
 			if (!is_change_) {
 				is_start_ = false;

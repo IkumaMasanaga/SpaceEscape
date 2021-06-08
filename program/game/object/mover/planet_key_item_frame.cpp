@@ -55,7 +55,7 @@ namespace spe {
 		desc.height_ = FRAME_HEIGHT;
 		desc.interval_ = 19;
 		desc.render_position_from_camera_ = 0.0f;
-		desc.inner_color_ = t2k::Color(0.5f);
+		desc.inner_color_ = mylib::Color(0.5f);
 		ptr->frame_ = UIFrame::create(desc);
 		ptr->frame_->is_update_always_ = true;
 		ptr->pushChild(ptr->frame_);

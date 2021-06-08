@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include "time.h"
+#include "mylib/time.h"
 
 namespace t2k {
 
@@ -40,7 +40,7 @@ namespace t2k {
 		// ret.... コールバックを呼び出したら true が帰る
 		//===================================================================================
 		inline bool update() {
-			sum_time_ += Time::getDeltaTime();
+			sum_time_ += mylib::Time::getDeltaTime();
 			if ( sum_time_ < regulation_time_seconds_ ) return false;
 			function_(object_);
 			sum_time_ = 0;

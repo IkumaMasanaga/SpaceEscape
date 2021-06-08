@@ -21,7 +21,7 @@ namespace dxe {
 
 		for (int i = DX_INPUT_PAD1; i < DX_INPUT_PAD16 + 1; ++i) {
 			if (!CheckJoypadXInput(i)) continue;
-			joypad_ = t2k::JoypadXInput::create(i);
+			joypad_ = mylib::JoypadXInput::create(i);
 			return;
 		}
 

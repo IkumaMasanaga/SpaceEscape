@@ -5,8 +5,8 @@ namespace spe {
 
 	void OneShotAnimation::update() {
 		// 各種値を変動させる
-		transform_.position_ += (move_ * t2k::Time::getDeltaTime());
-		transform_.rotation_ += (angle_per_second_ * t2k::Time::getDeltaTime());
+		transform_.position_ += (move_ * mylib::Time::getDeltaTime());
+		transform_.rotation_ += (angle_per_second_ * mylib::Time::getDeltaTime());
 		scale_controller_.isCompleteUpdate();
 		alpha_controller_.isCompleteUpdate();
 		// アニメーションが終了したら消す

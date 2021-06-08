@@ -14,7 +14,7 @@ namespace dxe {
 
 	BGM::SharedPtr BGM::create(const std::string& file_path) {
 		BGM::SharedPtr ptr = Object::create<BGM>();
-		ptr->audio_ = t2k::Audio::createFromFile(file_path);
+		ptr->audio_ = mylib::Audio::createFromFile(file_path);
 		return ptr;
 	}
 

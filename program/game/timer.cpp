@@ -13,7 +13,7 @@ namespace spe {
 		PlayerStatus& status = PlayerStatus::getInstance();
 		
 		// 減少させる値
-		float decrease_time = t2k::Time::getDeltaTime();
+		float decrease_time = mylib::Time::getDeltaTime();
 
 		// プレイヤーのアイテムの所持状況によって割合を変える
 		if (status.hasItem(PlanetID::MERCURY)) decrease_time *= 0.5f;

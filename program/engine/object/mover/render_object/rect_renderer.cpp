@@ -29,7 +29,7 @@ namespace dxe {
 		DrawQuadrangle((int)p1.x, (int)p1.y, (int)p2.x, (int)p2.y, (int)p3.x, (int)p3.y, (int)p4.x, (int)p4.y, color_.toInt(), is_fill_);
 	}
 
-	RectRenderer::SharedPtr RectRenderer::create(const int width, const int height, const t2k::Color& color, const bool is_fill) {
+	RectRenderer::SharedPtr RectRenderer::create(const int width, const int height, const mylib::Color& color, const bool is_fill) {
 		RectRenderer::SharedPtr ptr = RenderObject::create<RectRenderer>();
 		ptr->width_ = width;
 		ptr->height_ = height;

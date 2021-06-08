@@ -13,9 +13,9 @@ namespace spe {
 		float action_time_ = 0.1f;	// 横、縦に開ききる、閉じきるまでの時間
 		float back_alpha_ = 0.5f;	// 背景のアルファ値
 		float render_position_from_camera_ = 0.0f;	// カメラの影響割合
-		t2k::Color back_color_ = t2k::Color(0.5f);	// 背景の色
-		t2k::Color frame_color_ = t2k::Color(1.0f);	// 外枠の色
-		t2k::Color inner_color_ = t2k::Color(1.0f);	// 内枠の色
+		mylib::Color back_color_ = mylib::Color(0.5f);	// 背景の色
+		mylib::Color frame_color_ = mylib::Color(1.0f);	// 外枠の色
+		mylib::Color inner_color_ = mylib::Color(1.0f);	// 内枠の色
 	};
 
 	class UIFrame : public dxe::Mover {

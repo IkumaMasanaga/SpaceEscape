@@ -14,7 +14,7 @@ namespace dxe {
 
 	SE::SharedPtr SE::create(const std::string& file_path) {
 		SE::SharedPtr ptr = Object::create<SE>();
-		ptr->audio_ = t2k::Audio::createFromFile(file_path);
+		ptr->audio_ = mylib::Audio::createFromFile(file_path);
 		return ptr;
 	}
 

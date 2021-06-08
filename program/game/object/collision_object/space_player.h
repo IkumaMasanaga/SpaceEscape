@@ -50,10 +50,10 @@ namespace spe {
 		float consume_energy_rate_ = 0.0f;
 
 		// 慣性っぽい動き用（X軸）
-		t2k::SmoothNormalize x_;
+		mylib::SmoothNormalize x_;
 
 		// 慣性っぽい動き用（Y軸）
-		t2k::SmoothNormalize y_;
+		mylib::SmoothNormalize y_;
 
 		// 死亡フラグ
 		bool is_dead_ = false;

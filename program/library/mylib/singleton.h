@@ -14,7 +14,7 @@
 #include <memory>
 
 
-namespace t2k {
+namespace mylib {
 
 	template<class T>
 	class Singleton {

@@ -4,17 +4,17 @@
 
 namespace dxe {
 
-	class JoypadManager final : public t2k::Singleton<JoypadManager> {
+	class JoypadManager final : public mylib::Singleton<JoypadManager> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<JoypadManager>;
+		friend class mylib::Singleton<JoypadManager>;
 
 		JoypadManager() {}
 
 		//====================================================================================================
 		// メンバ変数
 
-		t2k::JoypadXInput::SharedPtr joypad_ = nullptr;
+		mylib::JoypadXInput::SharedPtr joypad_ = nullptr;
 
 		//====================================================================================================
 	public:
@@ -27,7 +27,7 @@ namespace dxe {
 		void update();
 
 		// ジョイパッドの取得
-		inline t2k::JoypadXInput::SharedPtr getJoypad() const { return joypad_; }
+		inline mylib::JoypadXInput::SharedPtr getJoypad() const { return joypad_; }
 
 		//====================================================================================================
 	};

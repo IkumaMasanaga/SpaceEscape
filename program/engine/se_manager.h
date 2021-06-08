@@ -34,10 +34,10 @@ namespace dxe {
 	// SEの再生
 	// SEの停止
 	// SEのボリューム調整
-	class SEManager final : public t2k::Singleton<SEManager> {
+	class SEManager final : public mylib::Singleton<SEManager> {
 	private:
 		// 基底クラスで生成するため
-		friend class t2k::Singleton<SEManager>;
+		friend class mylib::Singleton<SEManager>;
 		// releaceAllを呼ぶため
 		friend class DxEngine;
 

@@ -45,7 +45,7 @@ namespace dxe {
 
 	MovieSprite::SharedPtr MovieSprite::createFromFile(const std::string& file_path) {
 		MovieSprite::SharedPtr ptr = RenderObject::create<MovieSprite>();
-		ptr->movie_ = t2k::Movie::createFromFile(file_path);
+		ptr->movie_ = mylib::Movie::createFromFile(file_path);
 		return ptr;
 	}
 
